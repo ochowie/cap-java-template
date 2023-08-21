@@ -1,29 +1,28 @@
 {
-	"xsappname": "bookshop-java-public",
+	"xsappname": "bookstore",
 	"tenant-mode": "dedicated",
 	"scopes": [
-		{
-			"name": "$XSAPPNAME.admin",
-			"description": "admin"
-		}
+	  {
+		"name": "$XSAPPNAME.Administrators",
+		"description": "Administrators"
+	  }
 	],
-	"attributes": [
-		{
-			"name": "businessPartner",
-			"description": "S/4 BusinessPartner ID assigned to the user",
-			"valueType": "string"
-		}
-	],
+	"attributes": [],
 	"role-templates": [
-		{
-			"name": "admin",
-			"description": "generated",
-			"scope-references": [
-				"$XSAPPNAME.admin"
-			],
-			"attribute-references": [
-				"businessPartner"
-			]
-		}
+	  {
+		"name": "Administrators",
+		"description": "generated",
+		"scope-references": [
+		  "$XSAPPNAME.Administrators"
+		],
+		"attribute-references": []
+	  }
+	],
+	"role-collections": [
+	  {
+		"name": "BookStore_Administrators",
+		"description": "BookStore Administrators",
+		"role-template-references": ["$XSAPPNAME.Administrators"]
+	  }
 	]
-}
+  }
